@@ -8,30 +8,37 @@
     <title>Northwind-Product</title>
 </head>
 <body>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Product Name
-                </th>
-                <th>
-                    Quantity Per Unit
-                </th>
-                <th>
-                    Unit Price
-                </th>
-            </tr>
-        </thead>
+<section class="section">
+    <div class="container">
+        <h1 class="title">
+            Products
+        </h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Product Name
+                    </th>
+                    <th>
+                        Quantity Per Unit
+                    </th>
+                    <th>
+                        Unit Price
+                    </th>
+                </tr>
+            </thead>
 
-        <tbody>
-            {% for product in products %}
-            <tr>
-                <td>{{product['ProductName']}}</td>
-                <td>{{product['QuantityPerUnit']}}</td>
-                <td>{{product['UnitPrice']}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{product['ProductName']}}</td>
+                    <td>{{product['QuantityPerUnit']}}</td>
+                    <td>{{product['UnitPrice']}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
 </body>
 </html>

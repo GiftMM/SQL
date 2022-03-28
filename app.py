@@ -1,3 +1,4 @@
+from turtle import title
 from flask import Flask, render_template
 import database
 
@@ -16,7 +17,6 @@ def products(supplier_id):
     suppliername=supplier['CompanyName']
     return render_template('products.html', products=products, supplier=suppliername)
 
-
 @app.route('/categories')
 def categories():
     categories = database.get_categories()
@@ -29,4 +29,4 @@ def productcategory(category_id):
     categories = database.query("""SELECT CategoryName FROM Category WHERE Id = ?""", category_id)
     category = categories[0]
     categoryname = category['CategoryName']
-    return render_template('productcategory.html', products=products, category=categoryname)
+    return render_template('productcategory.html', products=products, category=categoryname, title = category['CategoryName'])
